@@ -122,10 +122,11 @@ const dom = function(el) {
       nodes.forEach(function(node) {
         wrapper = node.parentNode;
         dom(node).insertBefore(node.parentNode);
-        node.parentNode.parentNode.normalize();
       });
       if (wrapper) {
+        const wrapperParent =  wrapper.parentNode;
         dom(wrapper).remove();
+        wrapperParent.normalize();
       }
 
       return nodes;
