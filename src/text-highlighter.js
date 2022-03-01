@@ -72,6 +72,7 @@ class TextHighlighter {
    *  into the DOM, focused and deselected. Normalising events has a huge performance implication when enabling highlighting for a root element
    *  that contains thousands of nodes. This only applies for the independencia v2-2019 version.
    * @param {boolean} [options.keepRange=false] - Whether or not to keep the highlight selection after highlights are created. If set to true then the selection will stay active.
+   * @param {boolean} [options.highlightWhiteSpaceChars=false] - Whether or not to deserialise highlights into the DOM when they only contain white space characters.
    * @param {function} options.onRemoveHighlight - function called before highlight is removed. Highlight is
    *  passed as param. Function should return true if highlight should be removed, or false - to prevent removal.
    * @param {function} options.onBeforeHighlight - function called before highlight is created. Range object is
@@ -105,6 +106,7 @@ class TextHighlighter {
       priorities: {},
       normalizeElements: false,
       keepRange: false,
+      highlightWhiteSpaceChars: false,
       cancelProperty: "cancel",
       onRemoveHighlight: function() {
         return true;

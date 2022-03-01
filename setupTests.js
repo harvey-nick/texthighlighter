@@ -1,8 +1,10 @@
-import "jest-extended";
+import * as matchers from "jest-extended";
 
 import sanitizeHtml from "sanitize-html";
 import { findNodesAndOffsets, isElementHighlight } from "./src/utils/highlights";
 import { DATA_ATTR, IGNORE_TAGS } from "./src/config";
+
+expect.extend(matchers);
 
 // Add our root div node.
 const root = global.document.createElement("div");

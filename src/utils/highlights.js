@@ -408,7 +408,6 @@ function gatherSiblingsUpToEndNode(startNodeOrContainer, endNode) {
   let foundEndNodeSibling = false;
 
   let currentNode = startNodeOrContainer.nextSibling;
-  console.log({ currentNodeBeforeWhile: currentNode });
   while (currentNode && !foundEndNodeSibling) {
     if (currentNode === endNode || currentNode.contains(endNode)) {
       foundEndNodeSibling = true;
@@ -895,7 +894,6 @@ export function extractRangeRelativeToRootElement(range, rootElement) {
   }
 
   if (hasStartContainer && !hasEndContainer) {
-    console.log({ range });
     const endContainer = getLastDescendantTerminalNode(rootElement);
     const subRange = new Range();
     subRange.setStart(range.startContainer, range.startOffset);
@@ -904,7 +902,6 @@ export function extractRangeRelativeToRootElement(range, rootElement) {
   }
 
   if (!hasStartContainer && hasEndContainer) {
-    console.log({ range });
     const startContainer = getFirstDescendantTerminalNode(rootElement);
     const subRange = new Range();
     subRange.setStart(startContainer, 0);

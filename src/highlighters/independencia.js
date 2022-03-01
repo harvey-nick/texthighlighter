@@ -59,6 +59,7 @@ class IndependenciaHighlighter {
    * @param {string} options.contextClass - class added to element to which highlighter is applied,
    *  'highlighter-context' by default.
    * @param {string} options.namespaceDataAttribute - Data attribute to identify highlights that belong to a particular highlight instance.
+   * @param {boolean} options.highlightWhiteSpaceChars - Whether or not to deserialise highlights into the DOM when they only contain white space characters.
    * @param {Record<string, number>} options.priorities - Defines priorities for multiple highlighters, the keys
    *                                                      are the namespaces for highlighters and the values are the priorities
    *                                                      where the higher number has the higher priority.
@@ -101,7 +102,6 @@ class IndependenciaHighlighter {
     if (!rangeRelativeToRootElement) {
       return;
     }
-    console.log({ rangeRelativeToRootElement });
 
     let eventItems = [];
     dom(this.el).turnOffEventHandlers(eventItems);
@@ -319,6 +319,7 @@ class IndependenciaHighlighter {
         hlNode,
         highlight;
 
+      const { highlightWhiteSpaceChars } = self.options;
       const parentNode = self.el;
       const { nodesAndOffsets } = findNodesAndOffsets(
         hl,
@@ -341,7 +342,10 @@ class IndependenciaHighlighter {
         // everything excluding new lines and white space.
         const visibleTextContent = node.textContent.trim().replace(/(\r\n|\n|\r)/gm, "");
 
-        if (visibleTextContent.length > 0) {
+        if (
+          visibleTextContent.length > 0 ||
+          (highlightWhiteSpaceChars && node.textContent.length > 0)
+        ) {
           hlNode = node.splitText(offsetWithinNode);
           hlNode.splitText(lengthInNode);
 
