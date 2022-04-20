@@ -182,7 +182,7 @@ class PrimitivoHighlighter {
               hl.nextSibling &&
               hl.nextSibling.nodeType == 3
             ) {
-              let spanleft = document.createElement("span");
+              let spanleft = self.el.ownerDocument.createElement("span");
               spanleft.style.backgroundColor = parent.style.backgroundColor;
               spanleft.className = parent.className;
               let timestamp = parent.attributes[TIMESTAMP_ATTR].nodeValue;
@@ -273,7 +273,7 @@ class PrimitivoHighlighter {
 
     if (this.options.onBeforeHighlight(range) === true) {
       timestamp = +new Date();
-      wrapper = createWrapper(this.options);
+      wrapper = createWrapper(this.options, this.el.ownerDocument);
       wrapper.setAttribute(TIMESTAMP_ATTR, timestamp);
 
       createdHighlights = this.highlightRange(range, wrapper);
@@ -466,7 +466,7 @@ class PrimitivoHighlighter {
         dom(hlNode.previousSibling).remove();
       }
 
-      highlight = dom(hlNode).wrap(dom().fromHTML(hl.wrapper)[0]);
+      highlight = dom(hlNode).wrap(dom().fromHTML(hl.wrapper, parentNode.ownerDocument)[0]);
       highlights.push(highlight);
     }
 

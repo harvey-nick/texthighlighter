@@ -170,7 +170,7 @@ const dom = function(el) {
      * @returns {HTMLElement[]}
      */
     parentsWithoutDocument: function() {
-      return this.parents().filter((elem) => elem !== document);
+      return this.parents().filter((elem) => elem !== el.ownerDocument);
     },
 
     /**
@@ -300,10 +300,11 @@ const dom = function(el) {
     /**
      * Creates dom element from given html string.
      * @param {string} html
+     * @param {Document} doc
      * @returns {NodeList}
      */
-    fromHTML: function(html) {
-      let div = document.createElement("div");
+    fromHTML: function(html, doc = document) {
+      let div = doc.createElement("div");
       div.innerHTML = html;
       return div.childNodes;
     },

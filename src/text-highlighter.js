@@ -29,10 +29,11 @@ class TextHighlighter {
    * in constructor.
    *
    * @param {object} options - the same object as in TextHighlighter constructor.
+   * @param {Document} doc - the document to create the wrapper with.
    * @returns {HTMLElement}
    */
-  static createWrapper(options) {
-    return createWrapper(options);
+  static createWrapper(options, doc = document) {
+    return createWrapper(options, doc);
   }
 
   /**

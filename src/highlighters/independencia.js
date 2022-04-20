@@ -108,7 +108,7 @@ class IndependenciaHighlighter {
 
     if (this.options.onBeforeHighlight(range) === true) {
       timestamp = +new Date();
-      wrapper = createWrapper(this.options);
+      wrapper = createWrapper(this.options, this.el.ownerDocument);
       wrapper.setAttribute(TIMESTAMP_ATTR, timestamp);
 
       const descriptors = createDescriptors({
@@ -267,13 +267,16 @@ class IndependenciaHighlighter {
 
     const descriptor = [
       wrapperHTML,
-      getHighlightedTextRelativeToRoot({
-        rootElement: self.el,
-        startOffset: offset,
-        length,
-        excludeTags: this.options.excludeNodes,
-        excludeWhiteSpaceAndReturns: this.options.excludeWhiteSpaceAndReturns,
-      }),
+      getHighlightedTextRelativeToRoot(
+        {
+          rootElement: self.el,
+          startOffset: offset,
+          length,
+          excludeTags: this.options.excludeNodes,
+          excludeWhiteSpaceAndReturns: this.options.excludeWhiteSpaceAndReturns,
+        },
+        this.el.ownerDocument,
+      ),
       offset,
       length,
     ];
@@ -363,7 +366,7 @@ class IndependenciaHighlighter {
             const otherHlNodeCopy = otherHighlightNode.cloneNode(false);
             hlNode = dom(hlNode).wrap(otherHlNodeCopy);
           });
-          highlight = dom(hlNode).wrap(dom().fromHTML(hl.wrapper)[0]);
+          highlight = dom(hlNode).wrap(dom().fromHTML(hl.wrapper, parentNode.ownerDocument)[0]);
 
           highlights.push(highlight);
         }

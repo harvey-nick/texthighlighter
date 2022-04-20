@@ -95,10 +95,11 @@ export function haveSameColor(a, b) {
  * TextHighlighter instance calls this method each time it needs to create highlights and pass options retrieved
  * in constructor.
  * @param {object} options - the same object as in TextHighlighter constructor.
+ * @param {Document} doc - the document to create the wrapper element with.
  * @returns {HTMLElement}
  */
-export function createWrapper(options) {
-  let span = document.createElement("span");
+export function createWrapper(options, doc = document) {
+  let span = doc.createElement("span");
   span.style.backgroundColor = options.color;
   span.className = options.highlightedClass;
   return span;
@@ -575,16 +576,21 @@ export function getHighlightedTextForRange(range, excludeTags = IGNORE_TAGS) {
  *
  * @param {{ rootElement: HTMLElement, startOffset: number, length: number}} params
  *  The root-relative parameters for extracting highlighted text.
+ * @param {Document} doc The document to create new elements in as a part of the process of
+ *  extracting highlighted text.
  *
  * @return {string} The human-readable highlighted text for the given root element, offset and length.
  */
-export function getHighlightedTextRelativeToRoot({
-  rootElement,
-  startOffset,
-  length,
-  excludeTags = IGNORE_TAGS,
-  excludeWhiteSpaceAndReturns = false,
-}) {
+export function getHighlightedTextRelativeToRoot(
+  {
+    rootElement,
+    startOffset,
+    length,
+    excludeTags = IGNORE_TAGS,
+    excludeWhiteSpaceAndReturns = false,
+  },
+  doc = document,
+) {
   const textContent = dom(rootElement).textContentExcludingTags(arrayToLower(excludeTags));
   const finalTextContent = excludeWhiteSpaceAndReturns ? normaliseText(textContent) : textContent;
   const highlightedRawText = finalTextContent.substring(
@@ -592,8 +598,8 @@ export function getHighlightedTextRelativeToRoot({
     Number.parseInt(startOffset) + Number.parseInt(length),
   );
 
-  const textNode = document.createTextNode(highlightedRawText);
-  const tempContainer = document.createElement("div");
+  const textNode = doc.createTextNode(highlightedRawText);
+  const tempContainer = doc.createElement("div");
   tempContainer.appendChild(textNode);
   // Extract the human-readable text only.
   return tempContainer.innerText;
