@@ -501,7 +501,7 @@
 
     
 
-    <h4 class="name" id="createWrapper"><span class="type-signature"></span>createWrapper<span class="signature">(options)</span><span class="type-signature"> &rarr; {HTMLElement}</span></h4>
+    <h4 class="name" id="createWrapper"><span class="type-signature"></span>createWrapper<span class="signature">(options, doc)</span><span class="type-signature"> &rarr; {HTMLElement}</span></h4>
 
     
 
@@ -513,7 +513,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="utils_highlights.js.html">utils/highlights.js</a>, <a href="utils_highlights.js.html#line100">line 100</a>
+        <a href="utils_highlights.js.html">utils/highlights.js</a>, <a href="utils_highlights.js.html#line101">line 101</a>
     </li></ul></dd>
     
 
@@ -610,6 +610,29 @@ in constructor.</p>
             
 
             <td class="description last"><p>the same object as in TextHighlighter constructor.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>doc</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Document</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the document to create the wrapper element with.</p></td>
         </tr>
 
     
@@ -838,7 +861,7 @@ in constructor.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="utils_highlights.js.html">utils/highlights.js</a>, <a href="utils_highlights.js.html#line884">line 884</a>
+        <a href="utils_highlights.js.html">utils/highlights.js</a>, <a href="utils_highlights.js.html#line890">line 890</a>
     </li></ul></dd>
     
 
@@ -1023,7 +1046,7 @@ that only includes the given root element and its descendants.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="utils_highlights.js.html">utils/highlights.js</a>, <a href="utils_highlights.js.html#line684">line 684</a>
+        <a href="utils_highlights.js.html">utils/highlights.js</a>, <a href="utils_highlights.js.html#line690">line 690</a>
     </li></ul></dd>
     
 
@@ -1248,7 +1271,7 @@ into a given DOM node.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="utils_highlights.js.html">utils/highlights.js</a>, <a href="utils_highlights.js.html#line217">line 217</a>
+        <a href="utils_highlights.js.html">utils/highlights.js</a>, <a href="utils_highlights.js.html#line218">line 218</a>
     </li></ul></dd>
     
 
@@ -1477,7 +1500,7 @@ the normalised text.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="utils_highlights.js.html">utils/highlights.js</a>, <a href="utils_highlights.js.html#line923">line 923</a>
+        <a href="utils_highlights.js.html">utils/highlights.js</a>, <a href="utils_highlights.js.html#line929">line 929</a>
     </li></ul></dd>
     
 
@@ -1636,7 +1659,7 @@ of it's own starting with the given root node.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="utils_highlights.js.html">utils/highlights.js</a>, <a href="utils_highlights.js.html#line561">line 561</a>
+        <a href="utils_highlights.js.html">utils/highlights.js</a>, <a href="utils_highlights.js.html#line562">line 562</a>
     </li></ul></dd>
     
 
@@ -1782,7 +1805,7 @@ of it's own starting with the given root node.</p>
 
     
 
-    <h4 class="name" id="getHighlightedTextRelativeToRoot"><span class="type-signature"></span>getHighlightedTextRelativeToRoot<span class="signature">(params)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    <h4 class="name" id="getHighlightedTextRelativeToRoot"><span class="type-signature"></span>getHighlightedTextRelativeToRoot<span class="signature">(params, doc)</span><span class="type-signature"> &rarr; {string}</span></h4>
 
     
 
@@ -1794,7 +1817,7 @@ of it's own starting with the given root node.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="utils_highlights.js.html">utils/highlights.js</a>, <a href="utils_highlights.js.html#line581">line 581</a>
+        <a href="utils_highlights.js.html">utils/highlights.js</a>, <a href="utils_highlights.js.html#line584">line 584</a>
     </li></ul></dd>
     
 
@@ -1893,6 +1916,30 @@ relative to the root element.</p>
         </tr>
 
     
+
+        <tr>
+            
+                <td class="name"><code>doc</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Document</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The document to create new elements in as a part of the process of<br>
+extracting highlighted text.</p></td>
+        </tr>
+
+    
     </tbody>
 </table>
 
@@ -1953,7 +2000,7 @@ relative to the root element.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="utils_highlights.js.html">utils/highlights.js</a>, <a href="utils_highlights.js.html#line668">line 668</a>
+        <a href="utils_highlights.js.html">utils/highlights.js</a>, <a href="utils_highlights.js.html#line674">line 674</a>
     </li></ul></dd>
     
 
@@ -2135,7 +2182,7 @@ relative to the root element.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="utils_highlights.js.html">utils/highlights.js</a>, <a href="utils_highlights.js.html#line939">line 939</a>
+        <a href="utils_highlights.js.html">utils/highlights.js</a>, <a href="utils_highlights.js.html#line945">line 945</a>
     </li></ul></dd>
     
 
@@ -2294,7 +2341,7 @@ of it's own starting with the given root node.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="utils_highlights.js.html">utils/highlights.js</a>, <a href="utils_highlights.js.html#line472">line 472</a>
+        <a href="utils_highlights.js.html">utils/highlights.js</a>, <a href="utils_highlights.js.html#line473">line 473</a>
     </li></ul></dd>
     
 
@@ -2652,7 +2699,7 @@ of it's own starting with the given root node.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="utils_highlights.js.html">utils/highlights.js</a>, <a href="utils_highlights.js.html#line717">line 717</a>
+        <a href="utils_highlights.js.html">utils/highlights.js</a>, <a href="utils_highlights.js.html#line723">line 723</a>
     </li></ul></dd>
     
 
@@ -3069,7 +3116,7 @@ the same document.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="utils_highlights.js.html">utils/highlights.js</a>, <a href="utils_highlights.js.html#line430">line 430</a>
+        <a href="utils_highlights.js.html">utils/highlights.js</a>, <a href="utils_highlights.js.html#line431">line 431</a>
     </li></ul></dd>
     
 
@@ -3250,7 +3297,7 @@ the same document.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="utils_highlights.js.html">utils/highlights.js</a>, <a href="utils_highlights.js.html#line173">line 173</a>
+        <a href="utils_highlights.js.html">utils/highlights.js</a>, <a href="utils_highlights.js.html#line174">line 174</a>
     </li></ul></dd>
     
 
@@ -3452,7 +3499,7 @@ normalise the text.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="utils_highlights.js.html">utils/highlights.js</a>, <a href="utils_highlights.js.html#line192">line 192</a>
+        <a href="utils_highlights.js.html">utils/highlights.js</a>, <a href="utils_highlights.js.html#line193">line 193</a>
     </li></ul></dd>
     
 
@@ -3625,7 +3672,7 @@ normalise the text.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="utils_highlights.js.html">utils/highlights.js</a>, <a href="utils_highlights.js.html#line143">line 143</a>
+        <a href="utils_highlights.js.html">utils/highlights.js</a>, <a href="utils_highlights.js.html#line144">line 144</a>
     </li></ul></dd>
     
 
@@ -3762,7 +3809,7 @@ that directly follows should be ignored.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="utils_highlights.js.html">utils/highlights.js</a>, <a href="utils_highlights.js.html#line157">line 157</a>
+        <a href="utils_highlights.js.html">utils/highlights.js</a>, <a href="utils_highlights.js.html#line158">line 158</a>
     </li></ul></dd>
     
 
@@ -4542,7 +4589,7 @@ follows should be ignored.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="utils_highlights.js.html">utils/highlights.js</a>, <a href="utils_highlights.js.html#line868">line 868</a>
+        <a href="utils_highlights.js.html">utils/highlights.js</a>, <a href="utils_highlights.js.html#line874">line 874</a>
     </li></ul></dd>
     
 
@@ -4705,7 +4752,7 @@ by the Independencia highlighter.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="utils_highlights.js.html">utils/highlights.js</a>, <a href="utils_highlights.js.html#line743">line 743</a>
+        <a href="utils_highlights.js.html">utils/highlights.js</a>, <a href="utils_highlights.js.html#line749">line 749</a>
     </li></ul></dd>
     
 
@@ -5907,7 +5954,7 @@ and white spaces that follow carriage returns.</p></td>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.10</a> on Tue Mar 01 2022 12:49:18 GMT+0000 (Greenwich Mean Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.10</a> on Wed Apr 20 2022 17:42:23 GMT+0100 (British Summer Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>
