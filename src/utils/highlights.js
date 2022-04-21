@@ -901,7 +901,7 @@ export function extractRangeRelativeToRootElement(range, rootElement) {
 
   if (hasStartContainer && !hasEndContainer) {
     const endContainer = getLastDescendantTerminalNode(rootElement);
-    const subRange = new Range();
+    const subRange = new rootElement.ownerDocument.defaultView.Range();
     subRange.setStart(range.startContainer, range.startOffset);
     subRange.setEnd(endContainer, endContainer.textContent.length - 1);
     return subRange;
@@ -909,7 +909,7 @@ export function extractRangeRelativeToRootElement(range, rootElement) {
 
   if (!hasStartContainer && hasEndContainer) {
     const startContainer = getFirstDescendantTerminalNode(rootElement);
-    const subRange = new Range();
+    const subRange = new rootElement.ownerDocument.defaultView.Range();
     subRange.setStart(startContainer, 0);
     subRange.setEnd(range.endContainer, range.endOffset);
     return subRange;
