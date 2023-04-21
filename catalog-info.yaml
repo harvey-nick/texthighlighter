@@ -1,0 +1,16 @@
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: text-highlighter
+  description: N/A
+  tags:
+    - non-essence
+spec:
+  type: service
+  lifecycle: production
+  system: e-reader
+  owner: reader
+---
+
+
