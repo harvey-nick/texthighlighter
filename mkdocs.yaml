@@ -1,0 +1,7 @@
+site_name: 'texthighlighter'
+
+nav:
+  - Home: index.md
+
+plugins:
+  - techdocs-core
